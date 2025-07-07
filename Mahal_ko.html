@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="prot.styles.css" rel="stylesheet">
+        <title>Mahal</title>
+        <script>
+             function checkMultiChoice(event) {
+                let button = event.target;
+                const buttons = event.currentTarget.parentElement.querySelectorAll('button');
+                const feedback = event.currentTarget.parentElement.querySelector('.feedback');
+
+
+                buttons.forEach(button => {
+            button.style.backgroundColor = '';
+        });
+
+                if (button.innerHTML == 'Oo') {
+                    button.style.backgroundColor = 'Green';
+                    button.parentElement.querySelector('.feedback').innerHTML = '<h2>Pero minahal ka ba?</h2>';
+                }
+                else {
+                    button.style.backgroundColor = 'Green';
+                    button.parentElement.querySelector('.feedback').innerHTML = '<h2>Araw ko po</h2>';
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Miss ko na siya</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Question about your ex-lolove</h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                 <h2>Mahal mo pa ba?</h2>
+                 <button onclick="checkMultiChoice(event)">Oo</button>
+                 <button onclick="checkMultiChoice(event)">Yes</button>
+                 <p class="feedback"></p>
+            </div>
+        </div>
+    </body>
+</html>
